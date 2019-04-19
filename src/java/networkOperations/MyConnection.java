@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 public class MyConnection {
     
-    
     // create a function to connect with mysql database
     
     public static Connection getConnection(){

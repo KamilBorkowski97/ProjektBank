@@ -1,5 +1,6 @@
-   <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"
-            import="ObjectFactory.UserBean"
+<%@page import="servlety.myServlet"%>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"
+            import="ObjectFactory.UserBean" 
    %>
  
    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -15,9 +16,22 @@
       <body>
 
          <center>
-            <% UserBean currentUser = (UserBean) (session.getAttribute("currentSessionUser"));%>
-			
-            Welcome <%= currentUser.getFirstName() + " " + currentUser.getLastName() %>
+             
+             <%UserBean currentUser = (UserBean) (session.getAttribute("currentSessionUser"));%>
+             Welcome <%= currentUser.getFirstName() + " " + currentUser.getLastName()%>
+             
+             <form name="wyloguj" action="LogoutServlet">
+                 
+                 <input type="submit" value="logout" name="logout" />
+                 
+             </form>
+             
+             <br/><br/><br/><hr>
+             
+             Twój nr konta to:  <%=currentUser.getAccountBean().getAccountNumber()%>
+             
+             Twoje saldo wynosi: <%=currentUser.getAccountBean().getAccountBalance()%>
+                    
          </center>
 
       </body>

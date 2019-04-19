@@ -2,6 +2,12 @@ package ObjectFactory;
 
 public class UserBean {
 	
+    AccountBean account = new AccountBean();
+    
+    public AccountBean getAccountBean(){
+        return account;
+    }
+    
     private String password;
     private String login;
     private String FirstName;

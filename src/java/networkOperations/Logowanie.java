@@ -33,7 +33,7 @@ public class Logowanie {
             else{   
                 int idUser = rs.getInt("id_user");
                 // jezeli user jest w bazie to pobierz jego imie i nazwisko
-            String newQuery = "SELECT * FROM `person` WHERE `user_fk` =? ";
+            String newQuery = "SELECT * FROM `person` WHERE `user_fk` =?";
             rs.close();
             ps.close();
                 
@@ -50,6 +50,24 @@ public class Logowanie {
 
                     System.out.println("Welcome " + ub.getFirstName() + " " + ub.getLastName());
                     ub.setValid(true);
+                    
+                    //pobranie danych o koncie
+                    
+                    newQuery = "SELECT `account_number`,`account_balance` FROM `account` WHERE `id_account` =?";
+                    rs.close();
+                    ps.close();
+
+                    ps = MyConnection.getConnection().prepareStatement(newQuery);
+                    ps.setInt(1, idUser);
+                    rs = ps.executeQuery();
+                    more = rs.next();
+                    
+                    if(!more)
+                        System.out.println("bład zapytania");
+                    else{
+                        ub.getAccountBean().setAccountNumber(rs.getString("account_number"));
+                        ub.getAccountBean().setAccountBalance(rs.getInt("account_balance"));
+                    }
                 }
             }
         } 
@@ -74,5 +92,5 @@ public class Logowanie {
 
         return ub;
     }
-        
+            
 }

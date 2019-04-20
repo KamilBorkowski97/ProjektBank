@@ -28,7 +28,7 @@ public class myServlet extends HttpServlet {
             session = request.getSession(true);
             session.setAttribute("currentSessionUser",user); 
             response.sendRedirect("ProfileServlet"); //logged-in page      		
-        }
+        }//cos
 
         else 
             response.sendRedirect("invalidLogin.jsp"); //error page 

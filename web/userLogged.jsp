@@ -31,6 +31,10 @@
              Twój nr konta to:  <%=currentUser.getAccountBean().getAccountNumber()%>
              
              Twoje saldo wynosi: <%=currentUser.getAccountBean().getAccountBalance()%>
+             
+             <br><br>
+             
+             <a href="transaction.jsp">Wykonaj przelew</a>
                     
          </center>
 

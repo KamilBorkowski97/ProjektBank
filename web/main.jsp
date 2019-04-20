@@ -14,7 +14,7 @@
             <input type="text" name="login"/><br/>		
 
             Please enter your password
-            <input type="text" name="password"/><br/>
+            <input type="password" name="password"/><br/>
 
             <input type="submit" value="submit">			
             

@@ -29,7 +29,7 @@ public class TransactionServlet extends HttpServlet {
         Transaction.transfer(title,accNumber,amount);
 
         request.getRequestDispatcher("transactionSuccess.jsp").include(request, response);  
-        
+        //dososadosaasdsadsasda
         }  
         else{  
             request.getRequestDispatcher("invalidLogin.jsp").include(request, response);  

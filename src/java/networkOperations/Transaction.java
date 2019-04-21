@@ -1,26 +1,38 @@
 package networkOperations;
 
+import ObjectFactory.UserBean;
 import java.sql.*;
 public class Transaction {
     
-    
-    public static void transfer(String title, String accNumber, int amount){
-        //robi przelew, ale nie zapisuje go
-        Statement stmt = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;    
-
-        //String query = "UPDATE account SET account_balance=account_balance" + amount + " WHERE account_number=" + accNumber + ";";  
+    public static boolean transfer(String title, String accNumber, int amount, UserBean user){
+        
+        if(amount>user.getAccountBean().getAccountBalance())
+            return false;
+        
+        PreparedStatement ps = null;   
+            //pierwsze zapytanie dodaje pieniądze na konto na które przelewamy, drugie odejmuje z konta currentUser
         String query = "UPDATE account SET account_balance=account_balance+? WHERE account_number=?;";  
+        String query2 = "UPDATE account SET account_balance=? WHERE account_number=?;";
+        
+        String currentUserAccNumber = user.getAccountBean().getAccountNumber();
+        int currentUserAccBalance = user.getAccountBean().getAccountBalance();
+        int newValue = currentUserAccBalance - amount;
         try{
             
             ps = MyConnection.getConnection().prepareStatement(query);
-            //stmt = MyConnection.getConnection().createStatement();
-            //stmt.executeUpdate(query);
             ps.setInt(1, amount);
             ps.setString(2, accNumber);
             ps.executeUpdate();
-            //rs = ps.executeUpdate();
+            
+            ps = MyConnection.getConnection().prepareStatement(query2);
+            ps.setInt(1, newValue);
+            ps.setString(2, currentUserAccNumber);
+            ps.executeUpdate();
+            
+            user.getAccountBean().setAccountBalance(newValue);
+            
+            ps.close();
+            return true;
             
         }catch(SQLException e){
             e.getMessage();
@@ -28,19 +40,13 @@ public class Transaction {
             e.getMessage();
         }
          finally {
-         if (rs != null){
+         if (ps != null){
             try {
-               rs.close();
+               ps.close();
             } catch (SQLException e) {}
-               rs = null;
-            }
-	
-         if (stmt != null) {
-            try {
-               stmt.close();
-            } catch (SQLException e) {}
-               stmt = null;
+               ps = null;
             }
       }
+        return false;
     }
 }

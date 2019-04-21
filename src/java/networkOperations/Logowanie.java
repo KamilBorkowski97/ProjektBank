@@ -9,7 +9,7 @@ public class Logowanie {
    
     public static UserBean login(UserBean ub){
     
-        PreparedStatement ps = null;   
+        PreparedStatement ps = null;
         ResultSet rs = null;    
         
         String userLogin = ub.getLogin();

@@ -21,15 +21,16 @@ public class TransactionServlet extends HttpServlet {
         HttpSession session=request.getSession(false);  
         if(session!=null){  
           
-        
         String title = request.getParameter("title");
         String accNumber = request.getParameter("accNumber");
         int amount = Integer.parseInt(request.getParameter("amount"));
         
-        Transaction.transfer(title,accNumber,amount);
-
-        request.getRequestDispatcher("transactionSuccess.jsp").include(request, response);  
-        
+        UserBean user = (UserBean) session.getAttribute("currentSessionUser");
+        boolean isPossible = Transaction.transfer(title,accNumber,amount, user);
+        if(isPossible)
+            request.getRequestDispatcher("transactionSuccess.jsp").include(request, response);  
+        else
+            request.getRequestDispatcher("Error.jsp").include(request, response);
         }  
         else{  
             request.getRequestDispatcher("invalidLogin.jsp").include(request, response);  

@@ -16,6 +16,14 @@
         <servlet-name>TransactionServlet</servlet-name>
         <servlet-class>servlety.TransactionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InvestmentServlet</servlet-name>
+        <servlet-class>servlety.InvestmentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InvestmentConfirmServlet</servlet-name>
+        <servlet-class>servlety.InvestmentConfirmServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>myServlet</servlet-name>
         <url-pattern>/app</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>TransactionServlet</servlet-name>
         <url-pattern>/TransactionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InvestmentServlet</servlet-name>
+        <url-pattern>/InvestmentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InvestmentConfirmServlet</servlet-name>
+        <url-pattern>/InvestmentConfirmServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

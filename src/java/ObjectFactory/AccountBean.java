@@ -5,6 +5,10 @@ public class AccountBean {
     private String accountNumber;
     private int accountBalance;
     
+    public void addBalance(int value){
+        accountBalance+=value;
+    }
+    
     public String getAccountNumber() {
         return accountNumber;
     }

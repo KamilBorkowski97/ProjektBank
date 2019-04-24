@@ -1,0 +1,208 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2019-04-17, 10:11:02
+    Author     : Dell
+*/
+
+body {
+    background-image: url(".../img/bg_1.png");
+    background-position: 0px 0px;   
+    background-size: 99%;
+    background-repeat: no-repeat;
+    min-height: -webkit-fill-available;
+}
+
+.header {
+    height: auto;
+}
+
+.main {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    border-bottom: 3px solid #ececec;
+    border-top: 3px solid #ffc477;
+}
+
+.form-row {
+    margin-bottom: 25px;
+}
+
+input {
+    border: none!important;
+    border-bottom: 1px solid #ced4da!important;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-bottom: 2px solid rgba(126, 239, 104, 0.6)!important;
+  background: #fcfcfc;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+
+.btnLogin {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background: #0f3a57;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf',GradientType=0);
+	background-color:#0f3a57;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#fff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	transition: 0.5s;
+}
+.btnLogin:hover {
+	background-color:#7fb169;
+  
+}
+
+
+.btnRegister {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background-color:#ffc477;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cc9f52;
+        transition: 2s;
+}
+.btnRegister:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477));
+	background:-moz-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:-webkit-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:-o-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:-ms-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477',GradientType=0);
+	background-color:#fb9e25;
+        transition: 2s;
+}
+
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+footer {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(0,0,0, 0.2);
+    color: rgba(0,0,0, 0.5);
+}
+
+h1 {
+    color: #0f3a57;
+    padding: 25px;
+    font-weight: 500;
+}
+p {
+    color: #0f3a57;
+    padding: 10px 25px;
+}
+.block_reg:hover {
+    color: #ffc477;
+}
+
+.sidebar .nav {
+    
+    display: block;
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    background: #fcfcfc;
+}
+.sidebar .nav li:first-child > a {
+    margin: 0 15px;
+}
+.sidebar .nav li .dropdown-menu a, .sidebar .nav li a {
+    margin: 10px 15px 0;
+    border-radius: 3px;
+    border-bottom: 2px solid #f1f1f1;
+    color: #3c4858;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: capitalize;
+    font-size: 13px;
+    padding: 10px 15px;
+}
+
+.nav li a:hover, .nav li a:active, .nav li a:focus {
+    border-bottom: 3px solid #0f3a57;
+    color: #fff;
+    font-weight: 600;
+}
+.caret, .sidebar a {
+    transition: all .15s ease-in;
+}
+.sidebar .nav i {
+    font-size: 24px;
+    float: left;
+    margin-right: 15px;
+    line-height: 50px;
+    width: 30px;
+    text-align: center;
+    color: #a9afbb;
+}
+a .material-icons {
+    vertical-align: middle;
+}
+.animation-transition-general, .sidebar .nav p, .sidebar .sidebar-wrapper .user .user-info [data-toggle="collapse"] ~ div > ul > li > a span, .sidebar .sidebar-wrapper > .nav [data-toggle="collapse"] ~ div > ul > li > a span {
+    transition: all .3s linear;
+}
+.sidebar .nav p {
+    margin: 0;
+    line-height: 30px;
+    font-size: 14px;
+    position: relative;
+    display: block;
+    height: auto;
+    white-space: nowrap;
+}
+
+

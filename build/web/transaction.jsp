@@ -5,23 +5,44 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" session="false"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Transaction</title>
-    </head>
-    <body>
-        <h1>Wykonaj przelew:</h1>
+
+<jsp:include page="headerlogged.jsp" />
+
+            <div class="row">
+            <div class="col">
+                     <jsp:include page="menu.jsp" />
+              </div>
+              <div class="col-9">
+                  
+                  <h1>Wykonaj przelew:</h1>
         
         <form action="TransactionServlet">
             
-        Title <input type="text" name="title" value="" />
-        Account number <input type="text" name="accNumber" value="" />
-        Amount <input type="text" name="amount" value="" />
-        <input type="submit" value="submit" />
-        <input type="reset" value="Reset" />
+                     <div class="form-row">
+                      <div class="col">
+                       Tytuł <input type="text" name="title" value="" />
+                      </div>
+                    </div>
+            
+                    <div class="form-row">
+                            <div class="col">
+                              Numer konta <input type="text" name="accNumber" value="" />
+                            </div>
+                          </div>
+            
+                    <div class="form-row">
+                            <div class="col">
+                             Kwota <input type="text" name="amount" value="" />
+                            </div>
+                          </div>
+            
+        <input class="btnRegister" type="submit" value="submit" />
+        <input class="btnLogin" type="reset" value="Reset" />
         
         </form>
-    </body>
-</html>
+                  
+              </div>
+
+        
+    
+<jsp:include page="footer.jsp" />

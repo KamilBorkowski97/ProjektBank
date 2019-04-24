@@ -2,25 +2,20 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"
             import="ObjectFactory.UserBean" 
    %>
- 
-   <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
-   "http://www.w3.org/TR/html4/loose.dtd">
-
-   <html>
-
-      <head>
-         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <title>   User Logged Successfully   </title>
-      </head>
-	
-      <body>
-
-         <center>
+ <jsp:include page="headerlogged.jsp" />
+           
+           
              
-             <%UserBean currentUser = (UserBean) (session.getAttribute("currentSessionUser"));%>
+             <div class="row">
+            <div class="col">
+                     <jsp:include page="menu.jsp" />
+              </div>
+            <div class="col-9">
+                
+                 <%UserBean currentUser = (UserBean) (session.getAttribute("currentSessionUser"));%>
              Welcome <%= currentUser.getFirstName() + " " + currentUser.getLastName()%>
-             
-             <form name="wyloguj" action="LogoutServlet">
+              
+                <form name="wyloguj" action="LogoutServlet">
                  
                  <input type="submit" value="logout" name="logout" />
                  
@@ -57,9 +52,10 @@
                  <input type="submit" value="submit" />
                  
              </form>
+                
+            </div>
+             </div>
+             
+             
                     
-         </center>
-
-      </body>
-	
-   </html>
+       <jsp:include page="footer.jsp" />

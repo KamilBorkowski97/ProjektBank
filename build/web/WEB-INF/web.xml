@@ -24,6 +24,10 @@
         <servlet-name>InvestmentConfirmServlet</servlet-name>
         <servlet-class>servlety.InvestmentConfirmServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>registerServlet</servlet-name>
+        <servlet-class>servlety.registerServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>myServlet</servlet-name>
         <url-pattern>/app</url-pattern>
@@ -48,6 +52,10 @@
         <servlet-name>InvestmentConfirmServlet</servlet-name>
         <url-pattern>/InvestmentConfirmServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registerServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             5
@@ -57,9 +65,9 @@
         <welcome-file>main.jsp</welcome-file>
     </welcome-file-list>
     <jsp-config>
-	<jsp-property-group>
-		<url-pattern>*.jsp</url-pattern>
-		<page-encoding>UTF-8</page-encoding>
-	</jsp-property-group>
-</jsp-config> 
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+        </jsp-property-group>
+    </jsp-config>
 </web-app>

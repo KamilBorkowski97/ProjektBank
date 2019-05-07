@@ -4,6 +4,15 @@ public class AccountBean {
 
     private String accountNumber;
     private int accountBalance;
+
+    public AccountBean(String accountNumber, int accountBalance) {
+        this.accountNumber = accountNumber;
+        this.accountBalance = accountBalance;
+    }
+    
+    public AccountBean(){}
+    
+   
     
     public void addBalance(int value){
         accountBalance+=value;

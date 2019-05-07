@@ -53,7 +53,7 @@ public class Logowanie {
                     
                     //pobranie danych o koncie
                     
-                    newQuery = "SELECT `account_number`,`account_balance` FROM `account` WHERE `id_account` =?";
+                    newQuery = "SELECT `account_number`,`account_balance` FROM `account` WHERE `fk_user` =?";
                     rs.close();
                     ps.close();
 

@@ -14,7 +14,7 @@ public class UserBean {
     public boolean valid;
     
     Address address;
-    AccountBean account; 
+    AccountBean account = new AccountBean(); 
 
 
 

@@ -32,6 +32,7 @@ public class InvestmentServlet extends HttpServlet {
                 if(time<=0){
                     session.setAttribute("kwota", kwota);
                     session.setAttribute("procent", procent);
+                    time = 10;
                     request.getRequestDispatcher("ConfirmInvestment.jsp").include(request, response); 
                 }
                 else{

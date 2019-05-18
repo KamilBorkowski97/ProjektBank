@@ -16,6 +16,7 @@ public class ProfileServlet extends HttpServlet {
             throws ServletException, IOException {
        
         response.setContentType("text/html");  
+        response.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();  
         //request.getRequestDispatcher("link.html").include(request, response);  
           

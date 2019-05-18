@@ -16,8 +16,10 @@ public class InvestmentConfirmServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+      
         HttpSession session = request.getSession(false);
+        response.setCharacterEncoding("UTF-8");
+        
         if(session!=null){
             
             UserBean user = (UserBean) session.getAttribute("currentSessionUser");

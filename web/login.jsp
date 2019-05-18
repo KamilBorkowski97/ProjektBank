@@ -11,7 +11,7 @@
                         <input type="text" name="login" class="form-control" placeholder="Login...">
                       </div>
                       <div class="col">
-                          <input type="text" name="password" class="form-control" placeholder="********">
+                          <input type="password" name="password" class="form-control" placeholder="********">
                       </div>
               </div>
             

@@ -17,31 +17,33 @@ public class TransactionServlet extends HttpServlet {
             throws ServletException, IOException {
         
             response.setContentType("text/html");  
-
-        HttpSession session=request.getSession(false);  
+            response.setCharacterEncoding("UTF-8");
+        
+            HttpSession session=request.getSession(false);  
         if(session!=null){  
           
-        String title = request.getParameter("title");
-        String accNumber = request.getParameter("accNumber");
-        int amount = Integer.parseInt(request.getParameter("amount"));
-        
-        UserBean user = (UserBean) session.getAttribute("currentSessionUser");
-        boolean isPossible = Transaction.transfer(title,accNumber,amount, user);
-        if(isPossible)
-            request.getRequestDispatcher("transactionSuccess.jsp").include(request, response);  
-        else
-            request.getRequestDispatcher("Error.jsp").include(request, response);
-        }  
+            try{
+                String title = request.getParameter("title");
+                String accNumber = request.getParameter("accNumber");
+                int amount = Integer.parseInt(request.getParameter("amount"));
+
+                if(title.equals("") || accNumber.equals("") || amount<=0 ) {
+                    response.sendRedirect("transaction.jsp");
+                }
+                
+                UserBean user = (UserBean) session.getAttribute("currentSessionUser");
+                boolean isPossible = Transaction.transfer(title,accNumber,amount, user);
+                if(isPossible)
+                    request.getRequestDispatcher("transactionSuccess.jsp").include(request, response);  
+                else
+                    request.getRequestDispatcher("Error.jsp").include(request, response);
+                  
+            }catch(IOException | NumberFormatException | ServletException e){
+                    response.sendRedirect("transaction.jsp");
+                    }
+            }
         else{  
-            request.getRequestDispatcher("invalidLogin.jsp").include(request, response);  
-        }  
-        
+             request.getRequestDispatcher("invalidLogin.jsp").include(request, response);  
+            }  
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-    }
-
 }

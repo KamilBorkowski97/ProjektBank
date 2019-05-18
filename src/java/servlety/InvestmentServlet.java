@@ -3,6 +3,7 @@ package servlety;
 import ObjectFactory.UserBean;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,15 +19,19 @@ public class InvestmentServlet extends HttpServlet {
             throws ServletException, IOException {
         
         HttpSession session = request.getSession(false);
+        response.setCharacterEncoding("UTF-8");
         
         if(session!=null){
-            
-            int kwota = Integer.parseInt(request.getParameter("kwota"));
-            int procent = Integer.parseInt(request.getParameter("grupa"));
-            UserBean user = (UserBean) session.getAttribute("currentSessionUser");
+            int kwota;
+            int procent;
+            try{
+                kwota = Integer.parseInt(request.getParameter("kwota"));
+                procent = Integer.parseInt(request.getParameter("grupa"));
+                UserBean user = (UserBean) session.getAttribute("currentSessionUser");
             
             if(kwota>user.getAccountBean().getAccountBalance()){
                 System.out.println("Nie masz tyle kasy biedaku");
+                response.sendRedirect("ProfileServlet");
             }
             else{
                 if(time<=0){
@@ -54,6 +59,11 @@ public class InvestmentServlet extends HttpServlet {
                  
                 }
             }
+            }catch(IOException | NumberFormatException | ServletException e){
+                kwota=0;
+                response.sendRedirect("ProfileServlet");
+            }
+
         }
         
     }

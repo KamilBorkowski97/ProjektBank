@@ -17,6 +17,8 @@ public class myServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+            response.setCharacterEncoding("UTF-8");
+        
         try{	    
             UserBean user = new UserBean();
             user.setLogin(request.getParameter("login"));

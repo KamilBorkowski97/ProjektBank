@@ -2,6 +2,7 @@ package networkOperations;
 
 import ObjectFactory.UserBean;
 import java.sql.*;
+
 public class Transaction {
     
     public static boolean transfer(String title, String accNumber, int amount, UserBean user){
@@ -49,4 +50,32 @@ public class Transaction {
       }
         return false;
     }
+    
+    public static boolean checkIfExists(String accNumber){
+
+        try{
+            PreparedStatement ps = null; 
+            String check = "SELECT * FROM account WHERE account_number=?;";
+        
+            ps = MyConnection.getConnection().prepareStatement(check);
+            ps.setString(1, accNumber);
+
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                
+                String result = rs.getString("account_number");
+                if(result.equals(accNumber))
+                    return true;
+                else 
+                    return false;
+            }
+            
+            }catch(SQLException e){
+                return false;
+            }
+        return false;
+
+    }
+    
 }

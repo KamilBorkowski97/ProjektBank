@@ -29,15 +29,22 @@ public class TransactionServlet extends HttpServlet {
 
                 if(title.equals("") || accNumber.equals("") || amount<=0 ) {
                     response.sendRedirect("transaction.jsp");
+                }else{
+                        UserBean user = (UserBean) session.getAttribute("currentSessionUser");
+                        boolean isAccNumberCorrect = Transaction.checkIfExists(accNumber);
+                        if(!isAccNumberCorrect){
+                            request.getRequestDispatcher("NotCorrectAccNumber.jsp").include(request, response);
+                        }
+                        else{
+                            boolean isPossible = Transaction.transfer(title,accNumber,amount, user);
+                            if(isPossible)
+                                request.getRequestDispatcher("transactionSuccess.jsp").include(request, response);  
+                            else
+                                request.getRequestDispatcher("Error.jsp").include(request, response);
+                        }
+                        
                 }
-                
-                UserBean user = (UserBean) session.getAttribute("currentSessionUser");
-                boolean isPossible = Transaction.transfer(title,accNumber,amount, user);
-                if(isPossible)
-                    request.getRequestDispatcher("transactionSuccess.jsp").include(request, response);  
-                else
-                    request.getRequestDispatcher("Error.jsp").include(request, response);
-                  
+
             }catch(IOException | NumberFormatException | ServletException e){
                     response.sendRedirect("transaction.jsp");
                     }

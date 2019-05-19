@@ -3,7 +3,6 @@ package servlety;
 import ObjectFactory.UserBean;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,10 +28,8 @@ public class InvestmentServlet extends HttpServlet {
                 procent = Integer.parseInt(request.getParameter("grupa"));
                 UserBean user = (UserBean) session.getAttribute("currentSessionUser");
             
-            if(kwota>user.getAccountBean().getAccountBalance()){
-                System.out.println("Nie masz tyle kasy biedaku");
+            if(kwota>user.getAccountBean().getAccountBalance() || kwota <= 0)
                 response.sendRedirect("ProfileServlet");
-            }
             else{
                 if(time<=0){
                     session.setAttribute("kwota", kwota);

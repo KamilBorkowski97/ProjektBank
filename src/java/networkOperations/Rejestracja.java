@@ -12,6 +12,10 @@ import java.util.Calendar;
 import java.util.Random;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+import java.util.*;
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.activation.*;
 
 /**
  *
@@ -19,8 +23,7 @@ import javax.mail.internet.InternetAddress;
  */
 public class Rejestracja {
     
-    
-
+    private static String emailLogin;
 
     public Rejestracja() {
         
@@ -33,7 +36,54 @@ public class Rejestracja {
         int idAdress = addAddressGetId(user.getAddress());
         addUser(user,idAdress,idUser);
 
+        sendEmail(user);
         
+    }
+    
+    private static void sendEmail(UserBean user){ //do wysyłania maila z loginem
+        
+      String to = user.getEmail();
+
+      final String username = "kierunek.informatyka@o2.pl";
+      final String password = "2017akademiaSAN";
+      
+      String host = "localhost";
+
+      Properties props = new Properties();
+        props.setProperty("mail.transport.protocol", "smtp");
+        props.setProperty("mail.host", "poczta.o2.pl");
+        props.setProperty("mail.user", "kierunek.informatyka@o2.pl");
+        props.setProperty("mail.password", "2017akademiaSAN");
+        props.setProperty("mail.smtp.auth", "true");
+        props.setProperty("mail.from", "kierunek.informatyka@o2.pl");
+
+      Session session = Session.getInstance(props,
+          new javax.mail.Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+          });
+
+       try {
+
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO,
+                InternetAddress.parse(user.getEmail()));
+            message.setSubject("Witamy w Fake Banku !");
+            message.setText("Cześć," + user.getFirstName() + "!\n"
+                + "\n\n jest nam niezmiernie miło powitać Cię w naszym fake banku jedynym takim fake banku w Polsce!\n"
+                + "Twoj Login: " + emailLogin + "\n\n Pozdrawiam z piwnicy Kamil B. wraz z zarządem FakeBank");
+
+            Transport.send(message);
+
+            System.out.println("Done");
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+   
     }
    /* public static boolean registration(UserBean user){
         
@@ -245,7 +295,8 @@ public class Rejestracja {
             for(int i =0;i<8;i++){
                  sb.append(String.valueOf(rnd.nextInt(10)));
             }
-    
+            
+            emailLogin = sb.toString();
             return sb.toString();
     }
     //walidator emaila

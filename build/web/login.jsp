@@ -19,12 +19,7 @@
             <input type="submit" value="submit" class="btnRegister">
             
         </form>
-             </div
+             
       
-         
-        
-         
-         
-        
         
      <jsp:include page="footer.jsp" />

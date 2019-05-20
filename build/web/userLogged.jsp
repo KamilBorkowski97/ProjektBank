@@ -1,6 +1,5 @@
-<%@page import="servlety.LoginServlet"%>
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"
-            import="ObjectFactory.UserBean" 
+            import="ObjectFactory.UserBean"  import="servlety.LoginServlet"
    %>
  <jsp:include page="headerlogged.jsp" />
            

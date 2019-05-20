@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("currentSessionUser",user); 
             
             if(user.isIsAdmin())
-                response.sendRedirect("AdminServlet");
+                response.sendRedirect("adminPage.jsp");
             else
                 response.sendRedirect("ProfileServlet"); //logged-in page      		
         }

@@ -1,4 +1,6 @@
-    <div class="sidebar">
+<%@page contentType="text/html" pageEncoding="UTF-8" session="false"%>
+
+<div class="sidebar">
 
                         <div class="sidebar-wrapper">
                           <ul class="nav">

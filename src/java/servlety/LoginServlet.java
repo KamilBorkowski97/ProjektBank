@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class myServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     HttpSession session;
 
@@ -27,7 +27,11 @@ public class myServlet extends HttpServlet {
         if (user.isValid()){
             session = request.getSession(true);
             session.setAttribute("currentSessionUser",user); 
-            response.sendRedirect("ProfileServlet"); //logged-in page      		
+            
+            if(user.isIsAdmin())
+                response.sendRedirect("AdminServlet");
+            else
+                response.sendRedirect("ProfileServlet"); //logged-in page      		
         }
 
         else 

@@ -13,6 +13,8 @@ public class UserBean {
     private String phoneNumber;
     public boolean valid;
     
+    private boolean isAdmin;
+    
     Address address;
     AccountBean account = new AccountBean(); 
 
@@ -103,5 +105,14 @@ public class UserBean {
     public void setValid(boolean newValid){
        valid = newValid;
     }	
+    
+    
+    public boolean isIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
    
 }

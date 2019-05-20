@@ -68,6 +68,8 @@ public class Logowanie {
                         ub.getAccountBean().setAccountNumber(rs.getString("account_number"));
                         ub.getAccountBean().setAccountBalance(rs.getInt("account_balance"));
                     }
+                    
+                    ub.setIsAdmin(checkIfAdmin(ub.getLogin()));
                 }
             }
         } 
@@ -91,6 +93,31 @@ public class Logowanie {
       }
 
         return ub;
+    }
+    
+    private static boolean checkIfAdmin(String login){
+        
+        PreparedStatement ps;
+        ResultSet rs;
+        
+        String query = "SELECT isAdmin from user where login=?";
+        
+        try{
+            ps = MyConnection.getConnection().prepareStatement(query);
+            ps.setString(1, login);
+            
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                boolean result = rs.getBoolean("isAdmin");
+                return result;
+            }
+            
+        }catch(SQLException e){
+            e.getMessage();
+        }
+        
+        return false;
     }
             
 }

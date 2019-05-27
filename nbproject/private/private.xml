@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/src/java/servlety/AdminServlet.java</file>
+            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/src/java/networkOperations/Transaction.java</file>
+            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/src/java/servlety/TransactionServlet.java</file>
+            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/src/java/servlety/registerServlet.java</file>
+        </group>
     </open-files>
 </project-private>

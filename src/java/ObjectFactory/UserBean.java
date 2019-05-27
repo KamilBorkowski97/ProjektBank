@@ -11,13 +11,14 @@ public class UserBean {
     private String LastName;
     private String email;
     private String phoneNumber;
+    private int idUser;
     public boolean valid;
     
     private boolean isAdmin;
     
     Address address;
     AccountBean account = new AccountBean(); 
-
+    Kantor kantor = new Kantor();
 
 
     public UserBean(String password, String login, String FirstName, String LastName, String email,String phoneNumber, Address address, AccountBean account) {
@@ -48,6 +49,15 @@ public class UserBean {
     public void setAccount(AccountBean account) {
         this.account = account;
     }
+    
+    public Kantor getKantor() {
+        return kantor;
+    }
+
+    public void setKantor(Kantor kantor) {
+        this.kantor = kantor;
+    }
+
 
     
 
@@ -114,5 +124,14 @@ public class UserBean {
     public void setIsAdmin(boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+    
    
 }

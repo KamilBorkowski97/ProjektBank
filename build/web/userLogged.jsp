@@ -21,10 +21,15 @@
              </form>
              
              <br/><br/><br/><hr>
+             Twój nr klienta to: <%=currentUser.getLogin()%>
              
-             Twój nr konta to:  <%=currentUser.getAccountBean().getAccountNumber()%>
+             Twój nr konta to:  <%=currentUser.getAccountBean().getAccountNumber()%><br>
              
-             Twoje saldo wynosi: <%=currentUser.getAccountBean().getAccountBalance()%>
+             Twoje salda  <br>
+                          PLN:<%=currentUser.getAccountBean().getAccountBalance()%><br>
+                          USD:<%=String.format("%.2f", currentUser.getKantor().getUsdBalance())%><br>
+                          EUR:<%=String.format("%.2f", currentUser.getKantor().getEuroBalance())%><br>
+                          GBP:<%=String.format("%.2f", currentUser.getKantor().getGbpBalance())%>
              
              <br><br>
              

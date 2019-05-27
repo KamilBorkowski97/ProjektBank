@@ -33,12 +33,14 @@ public class TransactionServlet extends HttpServlet {
                         UserBean user = (UserBean) session.getAttribute("currentSessionUser");
                         boolean isAccNumberCorrect = Transaction.checkIfExists(accNumber);
                         if(!isAccNumberCorrect){
+                           
                             request.getRequestDispatcher("NotCorrectAccNumber.jsp").include(request, response);
                         }
                         else{
                             boolean isPossible = Transaction.transfer(title,accNumber,amount, user);
                             if(isPossible)
-                                request.getRequestDispatcher("transactionSuccess.jsp").include(request, response);  
+                                request.getRequestDispatcher("transactionSuccess.jsp").include(request, response); 
+                            //tutaj wywołanie funkcji z danymi tytul nrkonta kwotam USER
                             else
                                 request.getRequestDispatcher("Error.jsp").include(request, response);
                         }

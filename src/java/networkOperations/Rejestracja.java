@@ -35,6 +35,7 @@ public class Rejestracja {
         addAccount(user.getAccountBean(),idUser);
         int idAdress = addAddressGetId(user.getAddress());
         addUser(user,idAdress,idUser);
+        
 
         sendEmail(user);
         

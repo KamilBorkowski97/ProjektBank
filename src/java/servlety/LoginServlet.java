@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import networkOperations.Rejestracja;
 
 public class LoginServlet extends HttpServlet {
 
@@ -24,6 +25,7 @@ public class LoginServlet extends HttpServlet {
             user.setLogin(request.getParameter("login"));
             user.setPassword(request.getParameter("password"));
             user = Logowanie.login(user);
+
         if (user.isValid()){
             session = request.getSession(true);
             session.setAttribute("currentSessionUser",user); 

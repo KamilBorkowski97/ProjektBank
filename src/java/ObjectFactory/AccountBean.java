@@ -5,9 +5,12 @@ public class AccountBean {
     private String accountNumber;
     private int accountBalance;
 
+
+
     public AccountBean(String accountNumber, int accountBalance) {
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
+        
     }
     
     public AccountBean(){}
@@ -33,5 +36,6 @@ public class AccountBean {
     public void setAccountBalance(int accountBalance) {
         this.accountBalance = accountBalance;
     }
+
     
 }

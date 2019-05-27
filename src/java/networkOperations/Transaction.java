@@ -15,6 +15,8 @@ public class Transaction {
         String query = "UPDATE account SET account_balance=account_balance+? WHERE account_number=?;";  
         String query2 = "UPDATE account SET account_balance=? WHERE account_number=?;";
         
+        
+        
         String currentUserAccNumber = user.getAccountBean().getAccountNumber();
         int currentUserAccBalance = user.getAccountBean().getAccountBalance();
         int newValue = currentUserAccBalance - amount;
@@ -33,6 +35,9 @@ public class Transaction {
             user.getAccountBean().setAccountBalance(newValue);
             
             ps.close();
+           
+            addTransaction(title,accNumber,amount,user);
+            
             return true;
             
         }catch(SQLException e){
@@ -50,7 +55,7 @@ public class Transaction {
       }
         return false;
     }
-    
+    //SPRAWDZA CZY KONTO ISTNIEJE
     public static boolean checkIfExists(String accNumber){
 
         try{
@@ -78,4 +83,25 @@ public class Transaction {
 
     }
     
+        public static void addTransaction(String title, String accNumber, int amount, UserBean user){
+
+        try{     
+             Connection con = MyConnection.getConnection();
+             PreparedStatement ps=con.prepareStatement("insert into `transaction`(`id_user`,`title`,`addressee`,`amount`,`date`) values(?,?,?,?,?)");
+              ps.setInt(1, user.getIdUser());
+              ps.setString(2, title);
+              ps.setString(3,accNumber);
+              ps.setInt(4,amount);
+              ps.setDate(5,Rejestracja.currentDate());
+              ps.execute();
+                
+              
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }  
+        
 }
+ 
+
+    

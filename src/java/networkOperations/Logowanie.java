@@ -47,6 +47,7 @@ public class Logowanie {
                 else{
                     ub.setFirstName(rs.getString("First_Name"));
                     ub.setLastName(rs.getString("Last_Name"));
+                    ub.setIdUser(idUser);
 
                     System.out.println("Welcome " + ub.getFirstName() + " " + ub.getLastName());
                     ub.setValid(true);
@@ -67,6 +68,24 @@ public class Logowanie {
                     else{
                         ub.getAccountBean().setAccountNumber(rs.getString("account_number"));
                         ub.getAccountBean().setAccountBalance(rs.getInt("account_balance"));
+                    }
+                    //pobieranie danych o kontach
+                   newQuery = "SELECT `dolar`,`euro`,`funt` FROM `currency` WHERE `id_user` =?";
+                    rs.close();
+                    ps.close();
+
+                    ps = MyConnection.getConnection().prepareStatement(newQuery);
+                    ps.setInt(1, idUser);
+                    rs = ps.executeQuery();
+                    more = rs.next();
+                    
+                    if(!more)
+                        System.out.println("bład zapytania");
+                    else{
+                        ub.getKantor().setUsdBalance(rs.getDouble("dolar"));
+                        ub.getKantor().setEuroBalance(rs.getDouble("euro"));
+                        ub.getKantor().setGbpBalance(rs.getDouble("funt"));
+                        
                     }
                     
                     ub.setIsAdmin(checkIfAdmin(ub.getLogin()));
@@ -119,5 +138,6 @@ public class Logowanie {
         
         return false;
     }
+    
             
 }

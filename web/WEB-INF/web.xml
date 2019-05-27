@@ -32,6 +32,22 @@
         <servlet-name>AdminServlet</servlet-name>
         <servlet-class>servlety.AdminServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoanServlet</servlet-name>
+        <servlet-class>servlety.LoanServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoanAcceptServlet</servlet-name>
+        <servlet-class>servlety.LoanAcceptServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BuyCurrencyServlet</servlet-name>
+        <servlet-class>servlety.BuyCurrencyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SellCurrencyServlet</servlet-name>
+        <servlet-class>servlety.SellCurrencyServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/app</url-pattern>
@@ -63,6 +79,22 @@
     <servlet-mapping>
         <servlet-name>AdminServlet</servlet-name>
         <url-pattern>/AdminServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoanServlet</servlet-name>
+        <url-pattern>/LoanServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoanAcceptServlet</servlet-name>
+        <url-pattern>/LoanAcceptServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuyCurrencyServlet</servlet-name>
+        <url-pattern>/BuyCurrencyServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SellCurrencyServlet</servlet-name>
+        <url-pattern>/SellCurrencyServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

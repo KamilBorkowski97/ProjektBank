@@ -6,15 +6,17 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8" session="false"%>
 <%@page import="servlety.AdminServlet;"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin Page</title>
-    </head>
-    <body>
-    <center>
-         <h1>Witaj w Panelu Admina Fake Banku</h1>
+<%@page import="ObjectFactory.Loan"%>
+
+
+<jsp:include page="headerlogged.jsp" />
+         <h3>Witaj w Panelu Admina Fake Banku</h3>
+          
+          <form name="wyloguj" action="LogoutServlet">
+                 
+                 <input type="submit" value="logout" name="logout" />
+                 
+             </form>
          <hr>
          
          <h3> Podaj nr konta który chcesz usunąć: </h3><br>
@@ -23,11 +25,9 @@
          
          <form action="AdminServlet">
              <input type="text" name="deleteAccount" value="" />
-             <input type="submit" value="Usuń" name="deleteButton" />
+             <input type="submit" value="Usuń" name="deleteButton" class="btnRegister"/>
          </form>
+        
          
-         
-         
-    </center>
-    </body>
-</html>
+
+<jsp:include page="footer.jsp" />

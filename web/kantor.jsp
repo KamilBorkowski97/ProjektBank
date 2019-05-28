@@ -15,6 +15,7 @@
                      <jsp:include page="menu.jsp" />
               </div>
               <div class="col-9">
+                  <a name="kantor"></a>
         
         <form action="BuyCurrencyServlet">
                         

@@ -10,20 +10,29 @@
                      <jsp:include page="menu.jsp" />
               </div>
             <div class="col-9">
-                
-                 <%UserBean currentUser = (UserBean) (session.getAttribute("currentSessionUser"));%>
-             Welcome <%= currentUser.getFirstName() + " " + currentUser.getLastName()%>
-              
-                <form name="wyloguj" action="LogoutServlet">
+                <div class="row">
+                    
+                    <div class="col">
+                        <%UserBean currentUser = (UserBean) (session.getAttribute("currentSessionUser"));%>
+                 Welcome <%= currentUser.getFirstName() + " " + currentUser.getLastName()%><br>
+                 Twój nr klienta to: <b><%=currentUser.getLogin()%></b><br>
+                 Twój nr konta to:  <b><%=currentUser.getAccountBean().getAccountNumber()%></b>
+                    </div>
+                    
+                    <div class="col">
+                        <form name="wyloguj" action="LogoutServlet">
                  
-                 <input type="submit" value="logout" name="logout" />
+                 <input style="margin-top: 20px;" class="btnLogin" type="submit" value="logout" name="logout" />
                  
              </form>
+                    </div>
+                    
+                </div>
+                
              
-             <br/><br/><br/><hr>
-             Twój nr klienta to: <%=currentUser.getLogin()%>
+            <br/><hr>
+            
              
-             Twój nr konta to:  <%=currentUser.getAccountBean().getAccountNumber()%><br>
              
              Twoje salda  <br>
                           PLN:<%=currentUser.getAccountBean().getAccountBalance()%><br>
@@ -33,7 +42,7 @@
              
              <br><br>
              
-             <a href="transaction.jsp">Wykonaj przelew</a>
+            
              
              <br>
              
@@ -53,7 +62,7 @@
                  <input type="text" name="kwota" value="" />
                  
                  <br>
-                 <input type="submit" value="submit" />
+                 <input class="btnRegister" type="submit" value="submit" />
                  
              </form>
                 

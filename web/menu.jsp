@@ -4,12 +4,6 @@
 
                         <div class="sidebar-wrapper">
                           <ul class="nav">
-                            <li class="nav-item  ">
-                              <a class="nav-link" href="userLogged.jsp">
-                                <i class="material-icons">dashboard</i>
-                                <p>Dashboard</p>
-                              </a>
-                            </li>
                             <li class="nav-item ">
                               <a class="nav-link" href="userLogged.jsp">
                                 <i class="material-icons">person</i>
@@ -36,7 +30,7 @@
                             </li>
                              <li>
                                <li class="nav-item ">
-                              <a class="nav-link" href="kantor.jsp">
+                              <a class="nav-link" href="kantor.jsp#kantor">
                                 <i class="material-icons">bubble_chart</i>
                                 <p>Kantor</p>
                               </a>

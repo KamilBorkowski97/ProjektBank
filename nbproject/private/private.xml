@@ -3,12 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/src/java/servlety/AdminServlet.java</file>
-            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/src/java/networkOperations/Transaction.java</file>
-            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/src/java/servlety/TransactionServlet.java</file>
-            <file>file:/C:/Users/adria/Desktop/POŁOK/ProjektBank-1.0/src/java/servlety/registerServlet.java</file>
+            <file>file:/D:/BankProjekt/ProjektBank/src/java/networkOperations/Rejestracja.java</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/headerlogged.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/userLogged.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/menu.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/main.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/kantor.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/src/java/networkOperations/Transaction.java</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/adminPage.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/fail.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/loan.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/wplata.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/css/style.css</file>
         </group>
     </open-files>
 </project-private>

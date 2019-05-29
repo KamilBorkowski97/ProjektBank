@@ -4,17 +4,29 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/BankProjekt/ProjektBank/src/java/networkOperations/Rejestracja.java</file>
-            <file>file:/D:/BankProjekt/ProjektBank/web/headerlogged.jsp</file>
-            <file>file:/D:/BankProjekt/ProjektBank/web/userLogged.jsp</file>
             <file>file:/D:/BankProjekt/ProjektBank/web/menu.jsp</file>
             <file>file:/D:/BankProjekt/ProjektBank/web/main.jsp</file>
-            <file>file:/D:/BankProjekt/ProjektBank/web/kantor.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/src/java/ObjectFactory/Loan.java</file>
+            <file>file:/D:/BankProjekt/ProjektBank/src/java/ObjectFactory/Address.java</file>
+            <file>file:/D:/BankProjekt/ProjektBank/src/java/networkOperations/Investment.java</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/failSell.jsp</file>
             <file>file:/D:/BankProjekt/ProjektBank/src/java/networkOperations/Transaction.java</file>
-            <file>file:/D:/BankProjekt/ProjektBank/web/adminPage.jsp</file>
-            <file>file:/D:/BankProjekt/ProjektBank/web/fail.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/src/java/ObjectFactory/Kantor.java</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/historyTransaction.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/transaction.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/NotCorrectAccNumber.jsp</file>
             <file>file:/D:/BankProjekt/ProjektBank/web/loan.jsp</file>
             <file>file:/D:/BankProjekt/ProjektBank/web/wplata.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/src/java/networkOperations/UserBran.java</file>
             <file>file:/D:/BankProjekt/ProjektBank/web/css/style.css</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/headerlogged.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/userLogged.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/kantor.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/src/java/ObjectFactory/AccountBean.java</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/adminPage.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/build.xml</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/fail.jsp</file>
+            <file>file:/D:/BankProjekt/ProjektBank/web/failLoan.jsp</file>
         </group>
     </open-files>
 </project-private>

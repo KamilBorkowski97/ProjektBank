@@ -21,7 +21,7 @@
                       <div class="col">
                        Wprowadziłeś błędny format danych w polu "kwota pożyczki".</br>
                        </br>
-                       <a href="loan.jsp"> spróbuj jeszcze raz </a>:)
+                       <a href="loan.jsp" class="btnLogin"> spróbuj jeszcze raz </a>
                        
                       </div>
                     </div>

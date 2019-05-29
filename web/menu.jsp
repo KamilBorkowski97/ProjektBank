@@ -35,12 +35,12 @@
                                 <p>Kantor</p>
                               </a>
                             </li>
-                            <li class="nav-item active-pro ">
+                            <!--<li class="nav-item active-pro ">
                                   <a class="nav-link" href="wplata.jsp#wplata">
                                       <i class="material-icons">unarchive</i>
                                       <p>Dokonaj wplaty</p>
                                   </a>
-                              </li>
+                              </li>-->
                           </ul>
                         </div>
                       </div>

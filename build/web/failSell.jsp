@@ -20,7 +20,7 @@
                      <div class="form-row">
                       <div class="col">
                        Przykro nam nie posiadasz tyle środków na koncie.</br>
-                       Sprawdź stan konta i<a href="kantor.jsp"> spróbuj jeszcze raz </a>:)
+                       Sprawdź stan konta i<a href="kantor.jsp" class="btnLogin"> spróbuj jeszcze raz </a>:)
                        
                       </div>
                     </div>
